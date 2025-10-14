@@ -1,0 +1,140 @@
+/* Global */
+body {
+  background-color: #fff;
+  font-family: "Plus Jakarta Sans", sans-serif !important;
+  margin: 0;
+  padding-top: 5rem;
+  line-height: 1.6;
+  color: #212529;
+}
+
+/* Icons */
+.fa-compass {
+  color: #e63946; /* softer red for better UI */
+  font-size: 2rem;
+  transition: transform 0.2s ease-in-out;
+}
+.fa-compass:hover {
+  transform: scale(1.2);
+}
+
+/* Navbar */
+.navbar {
+  height: 4rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+/* Push content down so it doesn't overlap */
+
+.nav-link {
+  color: #212529;
+  font-weight: 600;
+  margin-right: 2rem;
+  transition: color 0.3s ease;
+}
+.nav-link:hover {
+  color: #e63946;
+}
+
+/* Footer */
+.f-info {
+  text-align: center;
+  min-height: 8rem;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  border-top: 1px solid #dee2e6;
+  padding: 1rem 0;
+}
+
+.f-info-links a {
+  text-decoration: none;
+  color: #212529;
+  margin-right: 0.5rem;
+  transition: color 0.2s ease;
+}
+.f-info-links a:hover {
+  text-decoration: underline;
+  color: #e63946;
+}
+
+.f-info-socials i {
+  margin-right: 1rem;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+.f-info-socials i:hover {
+  color: #e63946;
+}
+
+/* Cards */
+.listing-card {
+  border: none !important;
+  margin-bottom: 2rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.listing-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.card-img-top {
+  border-radius: 1rem !important;
+  width: 100% !important;
+  object-fit: cover !important;
+  max-height: 250px;
+}
+
+
+.card-body {
+  padding: 0.75rem !important;
+}
+
+.card-text p {
+  font-weight: 400 !important;
+  margin: 0;
+}
+
+.listing-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Card Overlay */
+.card-img-overlay {
+  opacity: 0;
+  transition: all 0.3s ease;
+  border-radius: 1rem;
+}
+.card:hover .card-img-overlay {
+  opacity: 0.25;
+  background-color: #ffffff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav-link {
+    margin-right: 1rem;
+    font-size: 0.9rem;
+  }
+  .f-info {
+    font-size: 0.9rem;
+  }
+  .card-img-top {
+    max-height: 200px;
+  }
+}
+
+/* Show page */
+.show-img{
+    height: 30vh;
+}
+

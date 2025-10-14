@@ -1,0 +1,72 @@
+<% layout("/layouts/boilerplate.ejs") %>
+
+    <body>
+        <br>
+        <div class="row">
+            <div class="col-8 offset-2">
+                <h2>Add New Property</h2>
+                <br>
+                <form action="/listings" method="post" novalidate class="needs-validation"
+                    enctype="multipart/form-data">
+                    <div class="mb-3">
+                        <label for="title" class="form-label">Title</label>
+                        <input type="text" name="listing[title]" placeholder="Enter Your Property Title"
+                            class="form-control" required>
+                        <div class="valid-feedback">Title Looks Good!</div>
+                        <div class="invalid-feedback">Please Add a Catchy Title</div>
+                    </div>
+                    <!-- <div class="mb-3">
+                    <label for="image" class="form-label">Image Link</label>
+                    <input type="text" name="listing[image]" placeholder="Enter Your Property Image(url)" class="form-control">
+                </div> -->
+                    <div class="mb-3">
+                        <label for="image" class="form-label">Upload Image</label>
+                        <input type="file" name="listing[image]" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="description" class="form-label">Description</label>
+                        <textarea name="listing[description]" rows="6" cols="30" placeholder="Describe Your Property"
+                            class="form-control" required></textarea>
+                        <div class="invalid-feedback">Please Add a short Description</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="category" class="form-label">Category</label>
+                        <select name="listing[category]" id="category" class="form-select" required>
+                            <option value="">-- Select a Category --</option>
+                            <option value="Global">Global</option>
+                            <option value="Mountain">Mountain</option>
+                            <option value="Island">Island</option>
+                            <option value="Greenery">Greenery</option>
+                            <option value="Snow">Snow</option>
+                            <option value="Desert">Desert</option>
+                            <option value="Beach">Beach</option>
+                            <option value="Urban">Urban</option>
+                        </select>
+                        <div class="invalid-feedback">Please select a category.</div>
+                    </div>
+
+                    <div class="row">
+                        <div class="mb-3 col-md-4">
+                            <label for="price" class="form-label">Price</label>
+                            <input type="text" name="listing[price]" placeholder="Enter Price(Rupee)"
+                                class="form-control" required>
+                            <div class="invalid-feedback">Please Enter reasonable Price</div>
+                        </div>
+                        <div class="mb-3 col-md-8">
+                            <label for="location" class="form-label">Location</label>
+                            <input type="text" name="listing[location]" placeholder="Enter Location"
+                                class="form-control" required>
+                            <div class="invalid-feedback">Please Enter Location</div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="country" class="form-label">Country</label>
+                        <input type="text" name="listing[country]" placeholder="India" class="form-control" required>
+                        <div class="invalid-feedback">Please Enter Country</div>
+                    </div>
+                    <button class="btn btn-outline-danger">Add</button>
+                </form>
+            </div>
+        </div>
+        <br>
+    </body>

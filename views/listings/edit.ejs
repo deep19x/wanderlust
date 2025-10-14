@@ -1,0 +1,67 @@
+<% layout("/layouts/boilerplate.ejs") %>
+
+    <body>
+        <div class="row">
+            <div class="col-8 offset-2">
+                <br>
+                <h2>Edit Property</h2>
+                <br>
+                <form action="/listings/<%=list.id%>?_method=PUT" method="post" novalidate class="needs-validation"
+                    enctype="multipart/form-data">
+                    <div class="mb-3">
+                        <label for="title" class="form-label">Title</label>
+                        <input type="text" name="listing[title]" value="<%=list.title%>" class="form-control" required>
+                        <div class="invalid-feedback">Empty Title Field</div>
+                    </div>
+                    <div class="mb-3">
+                        Original Image <br>
+                        <img src="<%= originalImageUrl %>" alt="original_image">
+                    </div>
+                    <div class="mb-3">
+                        <label for="image" class="form-label">Upload New Image</label>
+                        <input name="listing[image]" class="form-control" type="file">
+                    </div>
+                    <div class="mb-3">
+                        <label for="description" class="form-label">Description</label>
+                        <textarea name="listing[description]" class="form-control"><%=list.description%></textarea required>
+                        <div class="invalid-feedback">Please Enter Description</div>
+                    </div>
+                    <div class="mb-3">
+    <label for="category" class="form-label">Category</label>
+    <select name="listing[category]" class="form-select" required>
+        <option value="Global" <%= list.category === "Global" ? "selected" : "" %>>Global</option>
+        <option value="Mountain" <%= list.category === "Mountain" ? "selected" : "" %>>Mountain</option>
+        <option value="Island" <%= list.category === "Island" ? "selected" : "" %>>Island</option>
+        <option value="Greenery" <%= list.category === "Greenery" ? "selected" : "" %>>Greenery</option>
+        <option value="Snow" <%= list.category === "Snow" ? "selected" : "" %>>Snow</option>
+        <option value="Desert" <%= list.category === "Desert" ? "selected" : "" %>>Desert</option>
+        <option value="Beach" <%= list.category === "Beach" ? "selected" : "" %>>Beach</option>
+        <option value="Urban" <%= list.category === "Urban" ? "selected" : "" %>>Urban</option>
+    </select>
+    <div class="invalid-feedback">Please select a category</div>
+</div>
+
+                    <div class="row">
+                        <div class="mb-3 col-md-4">
+                            <label for="price" class="form-label">Price</label>
+                            <input type="number" name="listing[price]" value="<%=list.price%>" class="form-control" required>
+                            <div class="invalid-feedback">Please Enter reasonable Price</div>
+                        </div>
+                        <div class="mb-3 col-md-8">
+                            <label for="location" class="form-label">Location</label>
+                            <input type="text" name="listing[location]" value="<%=list.location%>" class="form-control" required>
+                            <div class="invalid-feedback">Please Enter Location</div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="country" class="form-label">Country</label>
+                        <input type="text" name="listing[country]" value="<%=list.country%>" class="form-control" required>
+                        <div class="invalid-feedback">Please Enter Country</div>
+                    </div>
+                    <br>
+                    <button class="btn btn-outline-danger">Edit</button>
+                </form>
+            </div>
+        </div>
+        <br>
+    </body>
